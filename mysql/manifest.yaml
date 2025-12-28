@@ -56,7 +56,7 @@ spec:
 
       volumes:
       - name: mysql-config
-      configMap:
+        configMap:
         name: mysql    
 
 ---
