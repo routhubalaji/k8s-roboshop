@@ -37,21 +37,21 @@ spec:
       envFrom:
       - configMapRef:  
           name: catalogue   
-        ports:
+      ports:
          - name: liveness-port
            containerPort: 8080
-        readinessProbe:
-          httpGet:
+      readinessProbe:
+        httpGet:
             path: /health
             port: liveness-port
-          failureThreshold: 1
-          periodSeconds: 15
-        livenessProbe:
-          httpGet:
+        failureThreshold: 1
+        periodSeconds: 15
+      livenessProbe:
+        httpGet:
             path: /health
             port: liveness-port
-          failureThreshold: 1
-          periodSeconds: 15   
+        failureThreshold: 1
+        periodSeconds: 15   
 
 
 ---
