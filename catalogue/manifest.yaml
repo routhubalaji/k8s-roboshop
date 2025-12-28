@@ -29,24 +29,24 @@ spec:
         project: roboshop
         component: catalogue
         tier: backend
-  spec:
-    containers:
-    - name: catalogue 
+    spec:
+      containers:
+      - name: catalogue 
       image: routhubalaji3/catalogue:v1
       imagePullPolicy: Always
       envFrom:
-      -  configMapRef:  
+      - configMapRef:  
           name: catalogue   
-         ports:
+        ports:
          - name: liveness-port
            containerPort: 8080
-         readinessProbe:
+        readinessProbe:
           httpGet:
             path: /health
             port: liveness-port
           failureThreshold: 1
           periodSeconds: 15
-         livenessProbe:
+        livenessProbe:
           httpGet:
             path: /health
             port: liveness-port
