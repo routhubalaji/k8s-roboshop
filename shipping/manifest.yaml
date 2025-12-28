@@ -44,12 +44,14 @@ spec:
           httpGet:
             path: /health
             port: liveness-port
+          initialDelaySeconds: 20  
           failureThreshold: 1
           periodSeconds: 15
         livenessProbe:
           httpGet:
             path: /health
             port: liveness-port
+          initialDelaySeconds: 30  
           failureThreshold: 1
           periodSeconds: 15   
 
@@ -69,4 +71,4 @@ spec:
     - protocol: TCP
       port: 8080 # service port
       targetPort: 8080 # container port
-      
+
