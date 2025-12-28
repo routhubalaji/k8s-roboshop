@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: routhubalaji3/mysql
+        image: routhubalaji3/mysql:v1
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
