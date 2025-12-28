@@ -35,8 +35,8 @@ spec:
         image: routhubalaji3/catalogue:v1
         imagePullPolicy: Always
         envFrom:
-        - configMapRef:  
-          name: catalogue   
+          - configMapRef:  
+            name: catalogue   
         ports:
         - name: liveness-port
           containerPort: 8080
