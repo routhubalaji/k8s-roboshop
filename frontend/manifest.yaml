@@ -32,12 +32,14 @@ spec:
           httpGet:
             path: /
             port: liveness-port
+          initialDelaySeconds: 20    
           failureThreshold: 1
           periodSeconds: 15
         livenessProbe:
           httpGet:
             path: /
             port: liveness-port
+          initialDelaySeconds: 30  
           failureThreshold: 1
           periodSeconds: 15   
 
