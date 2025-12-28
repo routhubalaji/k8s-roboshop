@@ -25,9 +25,6 @@ spec:
       - name: frontend 
         image: routhubalaji3/frontend:v1
         imagePullPolicy: Always
-        envFrom:
-          - configMapRef:  
-              name: frontend   
         ports:
         - name: liveness-port
           containerPort: 8080
@@ -61,4 +58,4 @@ spec:
     - protocol: TCP
       port: 80 # service port
       targetPort: 80 # container port
-      
+
