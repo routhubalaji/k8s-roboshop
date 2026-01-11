@@ -1,7 +1,5 @@
-# apiVersion: apps/v1
 apiVersion: v1
 kind: ConfigMap
-# kind: Deployment
 metadata:
   name: frontend
   namespace: roboshop
@@ -71,10 +69,18 @@ data:
     }
 
 ---  
-  # labels:
-  #   project: roboshop
-  #   component: frontend
-  #   tier: frontend
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: roboshop
+  # these are replica set labels
+  labels:
+    project: roboshop
+    component: frontend
+    tier: frontend
 spec:
   replicas: 1
   selector: 
